@@ -14,13 +14,14 @@ The Victor 888 has a nominal motor drive voltage of +12V, and uses +5V PWM signa
 The Victor 888 compares the PWM voltage (usually carried by the white/yellow line in most 3 wire PWM cables) with the PWM ground. The PWM protocol, obtained through probing of the output of the Digital Sidecart is detailed below:
 
 * Each PWM period lasts 5 ms.
-* The voltage high time is defined as the following, in microseconds: 8x(Duty Cycle) + 1600 , in which Duty Cycle ranges from -100 (full backwards) to +10) (full forwards).
+* The voltage high time is defined as the following, in microseconds: 8x(Duty Cycle) + 1600 , in which Duty Cycle ranges from -100 (full backwards) to +100) (full forwards).
 * The rest of the period is voltage low.
 
 ##Usage
 
-Using a 3 conductor unshrouded PWM wire, connect pin 9 of the Arduino to the signal wire and the Arduino ground to the ground wire. The +5V rail need not be connected, as the Victor 888 does not draw power or reference to it.
-Plug in the Arduino to a computer with a USB cable. The driver will start up with the duty cycle as zero. Input numbers between -100 and 100 into a 9600 baud USB serial interface into the Arduino to set the duty cycle.
+Using a 3 conductor unshrouded PWM wire, connect pin 9 of the Arduino to the signal wire (usually yellow or white and on the edge) and the Arduino ground to the ground wire (usually black or brown and on the other edge). The +5V rail need not be connected, as the Victor 888 does not draw power or reference to it.
+Plug in the PWM wire to the Victor 888. Plug in the Arduino to a computer with a USB cable. 
+The sketch will initialize with the duty cycle as zero. Input integers between -100 and 100 into a 9600 baud USB serial interface into the Arduino to set the duty cycle.
 
 The specs and manual for the Victor 888 can be found here: http://www.vexrobotics.com/217-2769.html 
 
