@@ -4,8 +4,8 @@
 unsigned short pin = 9;
 
 signed int dutyCycle = 0; 
-unsigned int highus = 8*dutyCycle + 1600;
-unsigned int lowus = 5000 - highus;
+unsigned int highus = 1500;
+unsigned int lowus = 1000;
 
 void setup() {
  pinMode(pin, OUTPUT); 
@@ -20,9 +20,8 @@ void loop() {
   delayMicroseconds(lowus);
   
   if (Serial.available() > 0) {
-    dutyCycle = constrain(Serial.parseInt(), -100, 100); 
-    highus = 8*dutyCycle + 1600;
-    lowus = 5000 - highus;
+    highus = 5*dutyCycle + 1500;
+    lowus = 1000;
     Serial.print("DS: "+dutyCycle);
   }
 }
