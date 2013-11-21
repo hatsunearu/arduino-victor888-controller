@@ -20,7 +20,7 @@ void loop() {
   delayMicroseconds(lowus);
   
   if (Serial.available() > 0) {
-    highus = 5*dutyCycle + 1500;
+    highus = 5*Serial.parseInt() + 1500;
     lowus = 1000;
     Serial.print("DS: "+dutyCycle);
   }
