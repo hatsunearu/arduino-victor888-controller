@@ -19,7 +19,7 @@ The Victor 888 compares the PWM voltage (usually carried by the white/yellow lin
 
 ##Usage
 
-Using a 3 conductor unshrouded PWM wire, connect pin 9 of the Arduino to the signal wire (usually yellow or white and on the edge) and the Arduino ground to the ground wire (usually black or brown and on the other edge). The red wire, which is the V+ wire, may be not connected. However, if you are having issues (see issue #1), try connecting this wire to the Vdd bus on your Arduino, which should have the same voltage as the maximum voltage of the PWM signal.
+Using a 3 conductor unshrouded PWM wire, connect pin 9 of the Arduino to the signal wire (usually yellow or white and on the edge) and the Arduino ground to the ground wire (usually black or brown and on the other edge). The red wire, which is the V+ wire, should be connected to the VCC of your Arduino. Note that if your PWM signal has a maximum voltage of 3.3V for whatever reason (perhaps by running a 3.3V Arduino), the red wire should also be at 3.3V. 
 
 Plug in the PWM wire to the Victor 888. Plug in the Arduino to a computer with a USB cable. 
 The sketch will initialize with the duty cycle as zero. Input integers between -100 and 100 into a 9600 baud USB serial interface into the Arduino to set the duty cycle.
